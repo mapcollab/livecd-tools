@@ -14,7 +14,7 @@ URL: https://github.com/rhinstaller/livecd-tools
 # git clone https://github.com/rhinstaller/livecd-tools
 # cd livecd-tools
 # make dist
-Source0: https://github.com/rhinstaller/livecd-tools/archive/%{name}-%{version}.tar.gz
+Source0: %{name}-%{version}.tar.gz
 # Drop the requirements for grub2-efi and shim: breaks 32-bit compose
 # and not needed as we have them in comps
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
@@ -89,6 +89,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root,-)
 %doc AUTHORS COPYING README HACKING
 %doc config/livecd-fedora-minimal.ks
+%{_datarootdir}/doc/livecd-tools/*
 %{_mandir}/man*/*
 %{_bindir}/livecd-creator
 %{_bindir}/livecd-iso-to-disk
