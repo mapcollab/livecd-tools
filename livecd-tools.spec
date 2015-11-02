@@ -108,6 +108,9 @@ rm -rf $RPM_BUILD_ROOT
 %{python_sitelib}/imgcreate/*.pyc
 
 %changelog
+* Mon Nov 02 2015 Tomasz Rostanski <tomasz.rostanski@thalesgroup.com.pl> 23.2-3
+- initial build for mps
+
 * Thu Oct 15 2015 Brian C. Lane <bcl@redhat.com> 23.2-3
 - Actually add the source file
 
