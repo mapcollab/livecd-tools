@@ -4,8 +4,8 @@
 
 Summary: Tools for building live CDs
 Name: livecd-tools
-Version: 20.1
-Release: 3%{?dist}
+Version: 20.6
+Release: 1%{?dist}
 Epoch: 1
 License: GPLv2
 Group: System Environment/Base
@@ -15,7 +15,7 @@ URL: http://git.fedorahosted.org/git/livecd
 # cd livecd
 # make dist
 # scp livecd*.tar.bz2 fedorahosted.org:livecd
-Source0: http://fedorahosted.org/releases/l/i/livecd/%{name}-%{version}.tar.bz2
+Source0: %{name}-%{version}.tar.gz
 # Drop the requirements for grub2-efi and shim: breaks 32-bit compose
 # and not needed as we have them in comps
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
@@ -106,6 +106,9 @@ rm -rf $RPM_BUILD_ROOT
 %{python_sitelib}/imgcreate/*.pyc
 
 %changelog
+* Thu Nov 05 2015 Tomasz Rostanski <tomasz.rostanski@thalesgroup.com> 20.6-1
+- Version 20.6
+
 * Wed Mar 18 2015 Fabian Arrotin <arrfab@centos.org> 20.1-3
 - Changed the Requires: line for syslinux-extlinux 
 
