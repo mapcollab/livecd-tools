@@ -108,7 +108,37 @@ rm -rf $RPM_BUILD_ROOT
 %{python_sitelib}/imgcreate/*.pyc
 
 %changelog
-* Thu Nov 05 2015 Tomasz Rostanski 20.6-1
+* Thu Nov 05 2015 Michal Gawlik <michal.gawlik@thalesgroup.com> 20.6.1-1
+- Version 20.6.1 (michal.gawlik@thalesgroup.com)
+- Contains many backported patches from 20.6..23.2:
+- Use add_drivers for dracut config (#1192030) (bcl@redhat.com)
+- livecd-iso-to-disk: partnum should only be a digit (#1136586)
+  (bcl@redhat.com)
+- Handle devices ending in a digit (#1136586) (bcl@redhat.com)
+- litd: All parted calls should use -s mode (#1195478) (bcl@redhat.com)
+- litd: Make sure device nodes have time to appear (bcl@redhat.com)
+- Sync usage documentation with livecd-iso-to-disk.pod (fgrose@sugarlabs.org)
+- Correct misinformation and cover new options (fgrose@sugarlabs.org)
+- Update repo urls to point to new github location (#1208825) (bcl@redhat.com)
+- Explicitly add the uas driver to the initrd (#1201983) (bcl@redhat.com)
+- kickstart: Handle resolv.conf being a nonexistent symlink
+  (walters@verbum.org)
+- Report Kickstart errors without traceback (#1168030) (bcl@redhat.com)
+- litd: Add missing syslinux modules (#1192137) (bcl@redhat.com)
+- Update spec requires for cherry-picked 2a2cbf7
+  (michal.gawlik@thalesgroup.com)
+- Preload the libnss_sss library (#1127103) (bcl@redhat.com)
+- mkefiboot now expects all upper case for BOOT*.EFI (#1154138)
+  (bcl@redhat.com)
+- Move __fstype into ImageCreator class (bcl@redhat.com)
+- Catch Yum errors and print them (#1119906) (bcl@redhat.com)
+- Add lorax ppc config files to search path (bcl@redhat.com)
+- Use inst.repo and inst.stage2 (bcl@redhat.com)
+- Use rd.live.overlay instead of overlay (bcl@redhat.com)
+- spec: bump syslinux required version (michal.gawlik@thalesgroup.com)
+- Update syslinux files for syslinux 6.02-4 (bcl@redhat.com)
+
+* Thu Nov 05 2015 Tomasz Rostanski <tomasz.rostanski@thalesgroup.com.pl> 20.6-1
 - Version 20.6
 
 * Wed Mar 18 2015 Fabian Arrotin <arrfab@centos.org> 20.1-3
