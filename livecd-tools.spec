@@ -106,7 +106,7 @@ rm -rf $RPM_BUILD_ROOT
 %{python_sitelib}/imgcreate/*.pyc
 
 %changelog
-* Thu Nov 05 2015 Tomasz Rostanski <tomasz.rostanski@thalesgroup.com> 20.6-1
+* Thu Nov 05 2015 Tomasz Rostanski 20.6-1
 - Version 20.6
 
 * Wed Mar 18 2015 Fabian Arrotin <arrfab@centos.org> 20.1-3
