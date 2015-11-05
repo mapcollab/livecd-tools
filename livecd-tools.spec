@@ -41,6 +41,7 @@ Requires: /sbin/extlinux
 Requires: yaboot
 %endif
 Requires: dumpet
+Requires: sssd-client
 BuildRequires: python
 BuildRequires: /usr/bin/pod2man
 
