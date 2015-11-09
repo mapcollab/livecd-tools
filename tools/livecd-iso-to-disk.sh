@@ -1278,6 +1278,11 @@ fi
 if [ -n "$ks" ]; then
     copyFile "$ks" "$TGTMNT/ks.cfg"
     kernelargs+=" inst.ks=hd:$TGTLABEL:/ks.cfg"
+elif [ -f "$SRCMNT/ks.cfg" ]; then
+    # MG: alternative way - taking ks.cfg from source iso image.
+    # Needed for mps-installer.inc.ks to work. See it for more info.
+    echo "Copying ks.cfg file from the iso image..."
+    copyFile "$SRCMNT/ks.cfg" "$TGTMNT/ks.cfg"
 fi
 
 echo "Updating boot config file"
