@@ -4,7 +4,7 @@
 
 Summary: Tools for building live CDs
 Name: livecd-tools
-Version: 20.6.1
+Version: 20.6.2
 Release: 1%{?dist}
 Epoch: 1
 License: GPLv2
@@ -108,6 +108,10 @@ rm -rf $RPM_BUILD_ROOT
 %{python_sitelib}/imgcreate/*.pyc
 
 %changelog
+* Mon Nov 09 2015 Michal Gawlik <michal.gawlik@thalesgroup.com> 20.6.2-1
+- Copy ks.cfg from source iso image if it exists
+  (michal.gawlik@thalesgroup.com)
+
 * Thu Nov 05 2015 Michal Gawlik <michal.gawlik@thalesgroup.com> 20.6.1-1
 - Version 20.6.1 (michal.gawlik@thalesgroup.com)
 - Contains many backported patches from 20.6..23.2:
