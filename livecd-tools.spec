@@ -107,6 +107,22 @@ rm -rf $RPM_BUILD_ROOT
 %{python_sitelib}/imgcreate/*.pyc
 
 %changelog
+* Thu Dec 17 2015 Michal Gawlik <michal.gawlik@thalesgroup.com> 21.6.1-1
+- Version 21.6.1 (michal.gawlik@thalesgroup.com)
+- spec: fix Source0 line (michal.gawlik@thalesgroup.com)
+- spec: bump syslinux required version (michal.gawlik@thalesgroup.com)
+- Contains several backported patches from 21.6..23.2:
+- Use add_drivers for dracut config (#1192030) (bcl@redhat.com)
+- livecd-iso-to-disk: partnum should only be a digit (#1136586)
+  (bcl@redhat.com)
+- Handle devices ending in a digit (#1136586) (bcl@redhat.com)
+- Sync usage documentation with livecd-iso-to-disk.pod (fgrose@sugarlabs.org)
+- Correct misinformation and cover new options (fgrose@sugarlabs.org)
+- Update repo urls to point to new github location (#1208825) (bcl@redhat.com)
+- Explicitly add the uas driver to the initrd (#1201983) (bcl@redhat.com)
+- kickstart: Handle resolv.conf being a nonexistent symlink
+  (walters@verbum.org)
+
 
 * Thu Dec 17 2015 Michal Gawlik <michal.gawlik@thalesgroup.com> 21.6-1
 - Version 21.6
