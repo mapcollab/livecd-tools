@@ -33,9 +33,9 @@ Requires: rsync
 Requires: hfsplus-tools
 %endif
 %ifarch %{ix86} x86_64
-Requires: syslinux 
-#Requires: syslinux-nonlinux 
-Requires: syslinux-extlinux
+Requires: syslinux >= 6.03-1
+Requires: syslinux-nonlinux >= 6.03-1
+Requires: /sbin/extlinux
 %endif
 %ifarch ppc
 Requires: yaboot
