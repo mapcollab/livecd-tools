@@ -4,7 +4,7 @@
 
 Summary: Tools for building live CDs
 Name: livecd-tools
-Version: 21.6
+Version: 21.6.1
 Release: 1%{?dist}
 Epoch: 1
 License: GPLv2
