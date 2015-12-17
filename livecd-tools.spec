@@ -107,6 +107,7 @@ rm -rf $RPM_BUILD_ROOT
 %{python_sitelib}/imgcreate/*.pyc
 
 %changelog
+
 * Thu Dec 17 2015 Michal Gawlik <michal.gawlik@thalesgroup.com> 21.6-1
 - Version 21.6
 
