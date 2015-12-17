@@ -107,6 +107,11 @@ rm -rf $RPM_BUILD_ROOT
 %{python_sitelib}/imgcreate/*.pyc
 
 %changelog
+* Thu Dec 17 2015 Michal Gawlik <michal.gawlik@thalesgroup.com> 21.6.2-1
+- Version 21.6.2 (michal.gawlik@thalesgroup.com)
+- Copy ks.cfg from source iso image if it exists
+  (michal.gawlik@thalesgroup.com)
+
 * Thu Dec 17 2015 Michal Gawlik <michal.gawlik@thalesgroup.com> 21.6.1-1
 - Version 21.6.1 (michal.gawlik@thalesgroup.com)
 - spec: fix Source0 line (michal.gawlik@thalesgroup.com)
