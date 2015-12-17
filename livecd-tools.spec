@@ -575,7 +575,7 @@ rm -rf $RPM_BUILD_ROOT
 - Try normal umount before falling back to lazy umount.
 - Allow creation of SELinux enabled LiveCD from an SELinux disabled system.
 
-* Tue Jul 30 2010 Bruno Wolff III <bruno@wolff.to> - 033-3
+* Fri Jul 30 2010 Bruno Wolff III <bruno@wolff.to> - 033-3
 - The previous update got replaced by the python update; another bump is needed.
 
 * Tue Jul 27 2010 Bruno Wolff III <bruno@wolff.to> - 033-2
