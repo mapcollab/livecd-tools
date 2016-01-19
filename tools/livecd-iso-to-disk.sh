@@ -1261,7 +1261,7 @@ if [ "$srctype" = "live" ]; then
     if [[ -d $SRCMNT/syslinux/ ]]; then
         echo "Preparing boot config file."
         sed -i -e "s/root=live:[^ ]*/root=live:CDLABEL=name/"\
-               -e "s/\(r*d*.*live.*ima*ge*\) .* quiet/\1 quiet/"\
+               -e "s/\(r*d*.*live.*ima*ge*\) .* livecdlastarg/\1 livecdlastarg/"\
                     $BOOTCONFIG $BOOTCONFIG_EFI
         sed -i -e "s/^timeout.*$/timeout\ 100/"\
                -e "/^totaltimeout.*$/d" $BOOTCONFIG

@@ -528,7 +528,7 @@ def get_timeout(ks, default = None):
         return default
     return int(ks.handler.bootloader.timeout)
 
-def get_kernel_args(ks, default = "ro rd.live.image quiet"):
+def get_kernel_args(ks, default = "ro rd.live.image livecdlastarg"):
     if not hasattr(ks.handler.bootloader, "appendLine"):
         return default
     if ks.handler.bootloader.appendLine is None:
