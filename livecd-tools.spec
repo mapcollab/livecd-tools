@@ -5,7 +5,7 @@
 Summary: Tools for building live CDs
 Name: livecd-tools
 Version: 21.6.2
-Release: 2%{?dist}
+Release: 3%{?dist}
 Epoch: 1
 License: GPLv2
 Group: System Environment/Base
@@ -107,6 +107,10 @@ rm -rf $RPM_BUILD_ROOT
 %{python_sitelib}/imgcreate/*.pyc
 
 %changelog
+* Tue Jan 19 2016 Michal Gawlik <michal.gawlik@thalesgroup.com> 21.6.2-3
+- default kernel cmdline: remove "quiet" to enable logs by default
+  (michal.gawlik@thalesgroup.com)
+
 * Thu Dec 17 2015 Michal Gawlik <michal.gawlik@thalesgroup.com> 21.6.2-2
 - tito: use ReleaseTagger (michal.gawlik@thalesgroup.com)
 - spec: fix bogus date warning (michal.gawlik@thalesgroup.com)
