@@ -111,6 +111,17 @@ else
     echo "Warning: You need to add pxelinux.0 to tftpboot/ subdirectory"
 fi
 
+# syslinux >= 6.02 requires also requires ldlinux.c32, libcom32.c32, libutil.c32
+# since the version of syslinux being used is the one on the host they may or may not
+# be available.
+for f in ldlinux.c32 libcom32.c32 libutil.c32; do
+    if [ -f "/usr/share/syslinux/$f" ]; then
+        cp /usr/share/syslinux/$f tftpboot
+    else
+        echo "Failed to find /usr/share/syslinux/$f, PXE may not boot."
+    fi
+done
+
 # Get boot append line from original cd image.
 if [ -f $CDMNT/isolinux/isolinux.cfg ]; then
     APPEND=$(grep -m1 append $CDMNT/isolinux/isolinux.cfg | sed -e "s#CDLABEL=[^ ]*#/$ISOBASENAME#" -e "s/ *append *//")
