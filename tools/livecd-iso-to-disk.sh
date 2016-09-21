@@ -1461,8 +1461,8 @@ if [ -z "$multi" ]; then
     for f in ldlinux.c32 libcom32.c32 libutil.c32; do
         if [ -f "/usr/share/syslinux/$f" ]; then
             cp /usr/share/syslinux/$f $TGTMNT/$SYSLINUXPATH/$f
-        else
-            echo "Failed to find /usr/share/syslinux/$f, USB may not boot."
+        #else
+        #    echo "Failed to find /usr/share/syslinux/$f, USB may not boot."
         fi
     done
 

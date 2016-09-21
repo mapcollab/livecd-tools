@@ -117,8 +117,8 @@ fi
 for f in ldlinux.c32 libcom32.c32 libutil.c32; do
     if [ -f "/usr/share/syslinux/$f" ]; then
         cp /usr/share/syslinux/$f tftpboot
-    else
-        echo "Failed to find /usr/share/syslinux/$f, PXE may not boot."
+    #else
+    #    echo "Failed to find /usr/share/syslinux/$f, PXE may not boot."
     fi
 done
 
