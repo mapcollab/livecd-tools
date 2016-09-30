@@ -5,7 +5,7 @@
 Summary: Tools for building live CDs
 Name: livecd-tools
 Version: 21.6.2
-Release: 4%{?dist}
+Release: 5%{?dist}
 Epoch: 1
 License: GPLv2
 Group: System Environment/Base
@@ -107,6 +107,11 @@ rm -rf $RPM_BUILD_ROOT
 %{python_sitelib}/imgcreate/*.pyc
 
 %changelog
+* Fri Sep 30 2016 Michal Gawlik <michal.gawlik@thalesgroup.com> 21.6.2-5
+- livecd-iso-to-disk/pxeboot: silence warnings (old syslinux support)
+  (michal.gawlik@thalesgroup.com)
+- Revert "spec: bump syslinux required version" (michal.gawlik@thalesgroup.com)
+
 * Wed Jan 27 2016 Tomasz Rostanski <tomasz.rostanski@thalesgroup.com> 21.6.2-4
 - livecd-iso-to-pxeboot.sh: install ldlinux.c32 libcom32.c32 and libutil.c32
   (tomasz.rostanski@thalesgroup.com)
