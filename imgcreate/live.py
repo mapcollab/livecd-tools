@@ -410,7 +410,10 @@ class x86LiveImageCreator(LiveImageCreatorBase):
         return ""
 
     def __find_syslinux_menu(self):
-        for menu in ("vesamenu.c32", "menu.c32"):
+        # MPS does not use graphical menu at all (VGA is disabled),
+        # hence we don't want vesamenu.c32 and use menu.c32 instead
+        for menu in ("menu.c32",):
+        #for menu in ("vesamenu.c32", "menu.c32"):
             for dir in ("/usr/lib/syslinux/", "/usr/share/syslinux/"):
                 if os.path.isfile(self._instroot + dir + menu):
                     return menu
@@ -495,6 +498,23 @@ class x86LiveImageCreator(LiveImageCreatorBase):
             return True
 
         return False
+
+    def __get_mps_syslinux_config(self):
+        """MPS-specific syslinux configuration (for now only the serial terminal)"""
+        kernel_options = self._get_kernel_options()
+        serial = ""
+        m = re.search(r"\bconsole=ttyS([0-9]+),([0-9]+)n8\b", kernel_options)
+        if m:
+            serial = "serial {} {}\n".format(*m.group(1, 2))
+        else:
+            m = re.search(r"\bconsole=uart,io,(0x[0-9]+),([0-9]+)n8\b", kernel_options)
+            if m:
+                serial = "serial {} {}\n".format(*m.group(1, 2))
+        # disable VGA console output if serial found
+        # (needed to boot without any VGA device in the system; esp. in a VM)
+        if serial:
+            serial += "console 0\n"
+        return serial
 
     def __get_basic_syslinux_config(self, **args):
         return """
@@ -662,7 +682,8 @@ menu separator
         if self.__copy_syslinux_background(isodir + "/isolinux/splash.jpg"):
             background = "splash.jpg"
 
-        cfg = self.__get_basic_syslinux_config(menu = menu,
+        cfg = self.__get_mps_syslinux_config()
+        cfg += self.__get_basic_syslinux_config(menu = menu,
                                                background = background,
                                                title = self.title,
                                                timeout = self._timeout * 10)
