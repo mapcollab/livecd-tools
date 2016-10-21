@@ -5,7 +5,7 @@
 Summary: Tools for building live CDs
 Name: livecd-tools
 Version: 21.6.2
-Release: 5%{?dist}
+Release: 6%{?dist}
 Epoch: 1
 License: GPLv2
 Group: System Environment/Base
@@ -107,6 +107,10 @@ rm -rf $RPM_BUILD_ROOT
 %{python_sitelib}/imgcreate/*.pyc
 
 %changelog
+* Fri Oct 21 2016 Michal Gawlik <michal.gawlik@thalesgroup.com> 21.6.2-6
+- imgcreate: switch syslinux to use serial console
+  (michal.gawlik@thalesgroup.com)
+
 * Fri Sep 30 2016 Michal Gawlik <michal.gawlik@thalesgroup.com> 21.6.2-5
 - livecd-iso-to-disk/pxeboot: silence warnings (old syslinux support)
   (michal.gawlik@thalesgroup.com)
