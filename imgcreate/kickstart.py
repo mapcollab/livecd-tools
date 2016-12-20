@@ -207,7 +207,9 @@ class FirewallConfig(KickstartConfig):
         for service in ksfirewall.services:
             args += [ "--service=%s" % (service,) ]
 
-        self.call(args)
+        # do not fail if binary does not exists (allow installations without firewalld)
+        if os.path.exists("%s/%s" %(self.instroot, "/usr/bin/firewall-offline-cmd")):
+            self.call(args)
 
 class RootPasswordConfig(KickstartConfig):
     """A class to apply a kickstart root password configuration to a system."""
