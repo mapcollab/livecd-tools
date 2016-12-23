@@ -5,7 +5,7 @@
 Summary: Tools for building live CDs
 Name: livecd-tools
 Version: 21.6.2
-Release: 6%{?dist}
+Release: 7%{?dist}
 Epoch: 1
 License: GPLv2
 Group: System Environment/Base
@@ -107,6 +107,10 @@ rm -rf $RPM_BUILD_ROOT
 %{python_sitelib}/imgcreate/*.pyc
 
 %changelog
+* Fri Dec 23 2016 Michal Gawlik <michal.gawlik@thalesgroup.com> 21.6.2-7
+- imgcreate: allow installations without firewalld
+  (tomasz.rostanski@thalesgroup.com.pl)
+
 * Fri Oct 21 2016 Michal Gawlik <michal.gawlik@thalesgroup.com> 21.6.2-6
 - imgcreate: switch syslinux to use serial console
   (michal.gawlik@thalesgroup.com)
